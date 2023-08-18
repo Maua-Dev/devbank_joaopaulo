@@ -71,3 +71,4 @@ class User:
         if current_balance < 0.0:
             return (False, "current_balance must be positive numbers")
         return (True, "")
+    # def validate_type(self, types: TransactionType,value: float,current_balance: float) -> Tuple[bool, str]:
