@@ -47,7 +47,10 @@ class Test_Transaction:
         with pytest.raises(ParamNotValidated):
             Transaction(types=TransactionType.deposit, value=100.0, current_balance= -2000.0, timestamp=1692328190.830605)
     
-
+    # def test_current_balance_lowerthandeposit(self):
+    #     with pytest.raises(ParamNotValidated):
+    #         Transaction(types=TransactionType.deposit, value=600.0, current_balance= 250.0, timestamp=1692328190.830605)
+            
     def test_timestamp_none(self):
         with pytest.raises(ParamNotValidated):
             Transaction(types=TransactionType.deposit, value=100.0, current_balance=2000.0)

@@ -10,22 +10,21 @@ class IItemRepository(ABC):
     
     
     @abstractmethod
-    def get_all_items(self) -> List[Item]:
+    def get_all_info(self) -> List[Item]:
         '''
-        Returns all the itens in the database 
-        '''
-        pass
-    
-    @abstractmethod
-    def get_item(self, item_id: int) -> Optional[Item]:
-        '''
-        Returns the item with the given id.
-        If the item does not exist, returns None
+        Returns all the transaction in the database 
         '''
         pass
     
     @abstractmethod
-    def create_item(self, item: Item, item_id: int) -> Item:
+    def post_deposit(self, item_id: int) -> Optional[Item]:
+        '''
+      
+        '''
+        pass
+    
+    @abstractmethod
+    def post_withdraw(self, item: Item, item_id: int) -> Item:
         '''
         Creates a new item in the database
         '''
