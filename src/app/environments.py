@@ -3,7 +3,7 @@ from enum import Enum
 import os
 from .repo.user_repository_interface import IUserRepository
 from .errors.environment_errors import EnvironmentNotFound
-from .repo.transaction_repository_interface import IITransactionsRepository
+from .repo.transaction_repository_interface import IITransactionRepository
 
 
 class STAGE(Enum):
@@ -34,7 +34,7 @@ class Environments:
         self.stage = STAGE[os.environ.get("STAGE")]
 
     @staticmethod
-    def get_transaction_repo() -> IITransactionsRepository:
+    def get_transaction_repo() -> IITransactionRepository:
         if Environments.get_envs().stage == STAGE.TEST:
             from .repo.transaction_repository_mock import TransactionsRepositoryMock
             return TransactionsRepositoryMock
