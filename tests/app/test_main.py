@@ -1,4 +1,4 @@
-from fastapi.exceptions import HTTPException
+from fastapi import HTTPException
 import pytest
 from src.app.entities.transaction import Transactions
 from src.app.enums.transaction_type_enum import ITransactionTypeEnum
@@ -46,7 +46,7 @@ class TestMain:
             "50": 1,
             "100": 0,
             "200": 0,
-        }  
-        response = withdraw(dict_values)
+            }  
+            response = withdraw(dict_values)
 
-        assert type(response) == dict
+            assert type(response) == dict
