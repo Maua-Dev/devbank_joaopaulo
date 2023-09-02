@@ -3,7 +3,7 @@ from ..entities.user import User
 from .user_repository_interface import IUserRepository
 
 
-class ItemRepositoryMock(IUserRepository):
+class UserRepositoryMock(IUserRepository):
     
     def __init__(self):
         self.user = User(name="Jony", agency="0305", account="22012-4", current_balance= 9000000.00)
