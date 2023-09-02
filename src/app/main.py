@@ -1,7 +1,7 @@
 import time
 from fastapi import FastAPI, HTTPException
 from mangum import Mangum
-from .entities.transaction import Transactions
+from .entities.transaction import Transaction
 from .enums.transaction_type_enum import ITransactionTypeEnum
 from .environments import Environments
 
@@ -41,7 +41,7 @@ def deposit(request: dict):
      if total_value <= 0:
           raise HTTPException(status_code=400, detail="O deposito deve ser um bumero positivo")
      
-     transaction = Transactions(
+     transaction = Transaction(
           type_transaction= ITransactionTypeEnum.DEPOSIT,
           value=float(total_value),
           current_balance=total_value + user["current_balance"],
@@ -66,7 +66,7 @@ def withdraw(request: dict):
      if total_value > user["current_balance"]:
           raise HTTPException(status_code=403, detail="Saldo insuficiente para transação")
 
-     transaction = Transactions(
+     transaction = Transaction(
           type_transaction =  ITransactionTypeEnum.WITHDRAW,
           value=float(total_value),
           current_balance= user["current_balance"] - total_value,

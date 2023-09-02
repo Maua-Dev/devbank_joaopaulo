@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 import pytest
-from src.app.entities.transaction import Transactions
+from src.app.entities.transaction import Transaction
 from src.app.enums.transaction_type_enum import ITransactionTypeEnum
 
 from src.app.main import get_all_transactions, get_user,deposit,withdraw
