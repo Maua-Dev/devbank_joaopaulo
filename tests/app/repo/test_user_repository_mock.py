@@ -1,11 +1,11 @@
 from src.app.enums.transaction_type_enum import ITransactionTypeEnum
 from src.app.repo.user_repository_mock import UserRepositoryMock
-from src.app.repo.transaction_repository_mock import TransactionsRepositoryMock
+from src.app.repo.transaction_repository_mock import TransactionRepositoryMock
 
 
 class Test_UserRepositoryMock:
         repo_user = UserRepositoryMock()
-        repo_transaction = TransactionsRepositoryMock()
+        repo_transaction = TransactionRepositoryMock()
 
         user = repo_user.get_user()
         transaction = repo_transaction.get_all_transactions()
