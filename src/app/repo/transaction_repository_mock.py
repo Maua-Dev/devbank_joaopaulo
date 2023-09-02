@@ -23,12 +23,12 @@ class TransactionRepositoryMock(ITransactionRepository):
             9: Transaction(types=ITransactionTypeEnum.deposit, value=2000.0, current_balance=58940.0, timestamp=669238779190.830605)
         }
 
-    def create_transaction(self, transaction: Transaction, transaction_id: int):
-        self.transactions[transaction_id] = transaction
+    def create_transaction(self, transaction: Transaction):
+        self.transactions.append(transaction)
         return transaction
 
-    def get_transaction(self, transaction_id: int):
-        return self.transactions.get(transaction_id, None)
+    def get_transaction(self):
+        return self.transactions
 
     def get_all_transactions(self) -> List[Transaction]:
         return self.transactions.values()

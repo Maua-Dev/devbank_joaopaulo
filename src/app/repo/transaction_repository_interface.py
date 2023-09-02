@@ -7,7 +7,7 @@ from ..entities.transaction import Transaction
 class ITransactionRepository(ABC):
 
     @abstractmethod
-    def create_transaction(self, transaction: Transaction, transaction_id: int) -> Transaction:
+    def create_transaction(self, transaction: Transaction) -> Transaction:
         pass
     
     @abstractmethod
